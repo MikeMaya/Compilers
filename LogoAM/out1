@@ -1,0 +1,151 @@
+proc tree(){
+	if($1 < 5)	{
+		Move($1);
+		Turn(180);
+		Move($1);
+		Turn(180);
+	} else {
+		Move($1 * 0.3);
+		Turn(330);
+		tree($1* 0.66);
+		Turn(30);
+		Move($1 * 0.16);
+		Turn(335);
+		tree($1 * 0.5);
+		Turn(25); 
+		Move($1 * 0.3);
+		Turn(335);
+		tree($1 * 0.5);
+		Turn(25);
+		Move($1 * 0.16)
+		Turn(180);
+		Move($1);
+		Turn(180);
+	}
+
+
+} 
+   
+tree(150);
+agregarOperacion declaracion
+agregar tree
+agregarOperacion ifCode
+agregarOperacion stop
+agregarOperacion stop
+agregarOperacion stop
+agregarOperacion push_parametro
+agregar 1
+agregarOperacion constPush
+agregar 5.0
+agregarOperacion LT
+agregarOperacion stop
+agregar MaquinaDePila$Move@72a582fc
+agregarOperacion push_parametro
+agregar 1
+agregar Limite
+agregar null
+agregar MaquinaDePila$Turn@7d346b2b
+agregarOperacion constPush
+agregar 180.0
+agregar Limite
+agregar null
+agregar MaquinaDePila$Move@72a582fc
+agregarOperacion push_parametro
+agregar 1
+agregar Limite
+agregar null
+agregar MaquinaDePila$Turn@7d346b2b
+agregarOperacion constPush
+agregar 180.0
+agregar Limite
+agregar null
+agregarOperacion stop
+agregar MaquinaDePila$Move@72a582fc
+agregarOperacion push_parametro
+agregar 1
+agregarOperacion constPush
+agregar 0.3
+agregarOperacion mul
+agregar Limite
+agregar null
+agregar MaquinaDePila$Turn@7d346b2b
+agregarOperacion constPush
+agregar 330.0
+agregar Limite
+agregar null
+agregar tree
+agregarOperacion push_parametro
+agregar 1
+agregarOperacion constPush
+agregar 0.66
+agregarOperacion mul
+agregar Limite
+agregarOperacion call
+agregar null
+agregar MaquinaDePila$Turn@7d346b2b
+agregarOperacion constPush
+agregar 30.0
+agregar Limite
+agregar null
+agregar MaquinaDePila$Move@72a582fc
+agregarOperacion push_parametro
+agregar 1
+agregarOperacion constPush
+agregar 0.16
+agregarOperacion mul
+agregar Limite
+agregar null
+agregar MaquinaDePila$Turn@7d346b2b
+agregarOperacion constPush
+agregar 335.0
+agregar Limite
+agregar null
+agregar tree
+agregarOperacion push_parametro
+agregar 1
+agregarOperacion constPush
+agregar 0.5
+agregarOperacion mul
+agregar Limite
+agregarOperacion call
+agregar null
+agregar MaquinaDePila$Turn@7d346b2b
+agregarOperacion constPush
+agregar 25.0
+agregar Limite
+agregar null
+agregar MaquinaDePila$Move@72a582fc
+agregarOperacion push_parametro
+agregar 1
+agregarOperacion constPush
+agregar 0.3
+agregarOperacion mul
+agregar Limite
+agregar null
+agregar MaquinaDePila$Turn@7d346b2b
+agregarOperacion constPush
+agregar 335.0
+agregar Limite
+agregar null
+agregar tree
+agregarOperacion push_parametro
+agregar 1
+agregarOperacion constPush
+agregar 0.5
+agregarOperacion mul
+agregar Limite
+agregarOperacion call
+agregar null
+agregar MaquinaDePila$Turn@7d346b2b
+agregarOperacion constPush
+agregar 25.0
+agregar Limite
+agregar null
+agregar MaquinaDePila$Move@72a582fc
+agregarOperacion push_parametro
+agregar 1
+agregarOperacion constPush
+agregar 0.16
+agregarOperacion mul
+agregar Limite
+error:syntax error

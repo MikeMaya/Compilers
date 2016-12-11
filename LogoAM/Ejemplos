@@ -1,0 +1,160 @@
+//Cuadrados crecientes
+proc square(){
+	for(j=0;j<4;j=j+1){
+		Forward($1);
+		Left(90);
+	}
+}
+for(i=1; i<= 36; i=i+1){
+	Color(i*26, i*45, i*3);
+	square(i*10);
+	Left(10);	
+}
+
+//Estrella
+proc estrella(){
+	for(i=0;i<5;i=i+1){
+		Forward(100);
+		Left(144);
+	}
+}
+Color(211, 147, 0);
+estrella();
+
+//Arbol Derecho
+"proc treeD(){\n"+
+	"if($1 < 5)	{\n"+
+		"Forward($1);\n"+
+		"Backward($1);\n"+
+	"} else {\n"+
+		"Forward($1 / 3);\n"+
+		"Right(30);\n"+
+		"treeD($1 * ( 2 / 3 ) );\n"+
+		"Left(30);\n"+
+		"Forward($1 / 6);\n"+
+		"Right(25);\n"+
+		"treeD($1 / 2);\n"+
+		"Left(25); \n"+
+		"Forward($1 / 3);\n"+
+		"Right(25);\n"+
+		"treeD($1 / 2);\n"+
+		"Left(25);\n"+
+		"Forward($1 / 6);\n"+
+		"Backward($1);\n"+
+	"}\n"+
+"} \n"+
+"Color(1, 150, 0);\n"+
+"treeD(150);"
+
+//Arbol Izquierdo
+proc treeI(){
+	if($1 < 5)	{
+		Forward($1);
+		Backward($1);
+	} else {
+		Forward($1 / 3);
+		Left(30);
+		treeI($1 * ( 2 / 3 ) );
+		Right(30);
+		Forward($1 / 6);
+		Left(25);
+		treeI($1 / 2);
+		Right(25); 
+		Forward($1 / 3);
+		Left(25);
+		treeI($1 / 2);
+		Right(25);
+		Forward($1 / 6);
+		Backward($1);
+	}
+} 
+Color(1, 150, 0);
+treeI(150);
+
+//Helecho
+
+proc fern(){ 
+	if($1 > 1) {
+		Move($1);
+		Turn(290 * $2);
+		fern($1 / 2 , $2 * -1);
+		Turn(70 * $2);
+		Move($1);
+		Turn(70 * $2);
+		fern($1 / 2 , $2);
+		Turn(290 * $2);
+		Turn(353 * $2);
+		fern($1 - 1 , $2);
+		Turn(7 * $2);
+		Turn(180);
+		Move($1 * 2);
+		Turn(180);
+	} 
+}
+Color(255, 255, 255);
+Turn(150);
+Move(300);
+Turn(210);
+Color(1, 150, 0);
+fern(25, 1);
+
+
+//Tree completo
+proc treeD(){
+	if($1 < 5)	{
+		Forward($1);
+		Backward($1);
+	} else {
+		Forward($1 / 3);
+		Right(30);
+		treeD($1 * ( 2 / 3 ) );
+		Left(30);
+		Forward($1 / 6);
+		Right(25);
+		treeD($1 / 2);
+		Left(25); 
+		Forward($1 / 3);
+		Right(25);
+		treeD($1 / 2);
+		Left(25);
+		Forward($1 / 6);
+		Backward($1);
+	}
+}
+proc treeI(){
+	if($1 < 5)	{
+		Forward($1);
+		Backward($1);
+	} else {
+		Forward($1 / 3);
+		Left(30);
+		treeI($1 * ( 2 / 3 ) );
+		Right(30);
+		Forward($1 / 6);
+		Left(25);
+		treeI($1 / 2);
+		Right(25); 
+		Forward($1 / 3);
+		Left(25);
+		treeI($1 / 2);
+		Right(25);
+		Forward($1 / 6);
+		Backward($1);
+	}
+} 
+
+Color(255,255,255);
+Backward(200);
+Color(1, 150, 0);
+treeI(250);
+treeD(250);
+
+
+Poligonos
+Pentagrama
+Estrella de david
+Espiral cuadrada
+Circulo dentro de cuadrado dentro de circulo, dentro de cuadrado, etc
+figuras de espirografo
+Regla
+Arbol

@@ -1,0 +1,41 @@
+proc tree(){
+ if($1>5){
+  Move($1);
+  Turn(20);
+Color($1*10,$1*20,$1*30);
+  tree($1-5);
+  Turn(320);
+Color($1*20,$1*30,$1*10);
+  tree($1-5);
+  Turn(20);
+Color($1*30,$1*10,$1*20);
+  Move((-1)*($1));
+ }
+}
+
+Turn(90);
+Color(0,0,0);
+Turn(180);
+Move(200);
+Turn(180);
+Color(255,255,255);
+tree(60);
+
+
+proc recur(){
+   if($1<2){
+	  Move($1*20);
+	}
+   else{
+	  Move($1*20);
+	  Turn(90);
+	  recur($1-1);
+   }
+}
+Color(0,0,0);
+Move(-200);
+Turn(270);
+Move(200);
+Color(255,255,255);
+Turn(90);
+recur(20);
