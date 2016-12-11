@@ -1,0 +1,45 @@
+//Ejemplo practica 7
+func pot2(){
+	resultado=1+0i
+	if( $1 > 0+0i ){
+		resultado=2+0i
+	}
+	for(aux=1+0i; aux < $1; aux= aux+ 1+1i){
+		resultado = resultado * 2+0i
+	}
+	return resultado
+}
+
+func potenciador(){
+	if($2 == 0+0i){
+		base=1+0i
+	} else {
+		base= $1
+	}
+	resultado= base
+	for(aux=1+0i; aux<$2 ; aux= aux+1+1i){
+		resultado = resultado * base
+	}
+	return resultado
+}
+
+proc sumPotencias(){
+	a=0+0i
+	acum=0+0i
+	for(v2=0+0i; v2<=$2; v2=v2+1+0i){
+		a=potenciador($1, v2)
+		acum=acum+a
+		print acum
+	}
+}
+
+proc sinPotencias(){
+	a=0+0i	
+	for(v2=0+0i; v2<=$1; v2=v2+1+0i){
+		a=pot2(v2)
+		print sin(a)
+	}	
+}
+
+sumPotencias(5+0i)
+sinPotencias(10+0i)

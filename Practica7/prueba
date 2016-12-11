@@ -1,0 +1,49 @@
+//Prueba para procedimiento
+proc sumaSP(){
+	b1=1+1i
+	b2=1+0i
+    b3=0+0i
+	while(b3 < 5+0i){
+       b1=b1+b2
+       print b1
+       b3= b3+ 1+1i
+	}
+}
+
+sumaSP()
+
+//Prueba procedimiento con argumentos
+proc sumaCP(){
+	v1=0+0i
+	print $1
+	print $2
+	while(v1 < $2){
+       $1 = $1 + 1+1i
+       print $1
+       v1= v1 + 1+1i
+	}
+}
+
+v3=0+0i
+sumaCP(v3, 5+5i)
+
+//Prueba de funciones con argumentos
+func potenciador(){
+	if($2 == 0+0i){
+		$1=1+0i
+		$2=0+0i
+	}
+	aux1=$1
+	while($2>1+0i){
+		$1=$1*aux1
+		$2=$2-1+1i
+	}
+	return $1
+}
+
+v1=2+0i
+v2=0+0i
+v2=potenciador(v1,6+0i)
+print v2
+
+
